@@ -5,7 +5,6 @@ import { Configuration, OpenAIApi } from "openai";
 
 dotenv.config();
 
-console.log(process.env.OPENAI_API_KEY);
 const configuration = new Configuration({
 	apiKey: process.env.OPENAI_API_KEY,
 });
@@ -57,6 +56,4 @@ function isProgram(str) {
 	let programRegex = /^\s*\{[\s\S]*\}\s*$/; //Matches strings with opening and closing curly braces
 	return programRegex.test(str);
 }
-app.listen(5000, () =>
-	console.log("server is running on port http://localhost:5000")
-);
+app.listen(5000, () => console.log("server is live"));
