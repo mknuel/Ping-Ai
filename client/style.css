@@ -8,13 +8,15 @@
 }
 
 body {
-	background: #343541;
+	/* background: #343541; */
+	background: #0d1117;
 }
 
 #app {
 	width: 100vw;
 	height: 100vh;
-	background: #343541;
+	/* background: #343541; */
+	background: #0d1117;
 
 	display: flex;
 	flex-direction: column;
@@ -50,13 +52,15 @@ body {
 }
 
 .ai {
-	background: #40414f;
+	/* background: #40414f; */
+	background: #010409;
 }
 
 .chat {
 	width: 100%;
 	max-width: 1280px;
 	margin: 0 auto;
+
 
 	display: flex;
 	flex-direction: row;
@@ -107,6 +111,9 @@ body {
 	scrollbar-width: none;
 }
 
+.message::first-letter{
+	text-transform: capitalize;
+}
 /* hides scrollbar */
 .message::-webkit-scrollbar {
 	display: none;
@@ -117,7 +124,8 @@ form {
 	max-width: 1280px;
 	margin: 0 auto;
 	padding: 10px;
-	background: #40414f;
+	background: rgb(45, 49, 57);
+	/* background: #40414f; */
 
 	display: flex;
 	flex-direction: row;
@@ -148,3 +156,17 @@ form img {
 	width: 30px;
 	height: 30px;
 }
+
+  .blinking-cursor {
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    from, to {
+      color: transparent;
+    }
+
+    50% {
+      color: black;
+    }
+  }

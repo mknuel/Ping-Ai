@@ -14,26 +14,31 @@ const loader = (element) => {
 	loadInterval = setInterval(() => {
 		element.textContent += ".";
 
-		if (element.textContent === "....") {
+		if (element.textContent.trim() === "....") {
 			element.textContent = " ";
 		}
 	}, 300);
 };
-
+// check if an element contains another element
+const elementContains = (parent, child) =>
+	parent !== child && parent.contains(child);
 // simulate typing effect for pixie
 const typeText = (element, text) => {
 	let index = 0;
+	const cursor = document.getElementById("cursor");
+
+	const blcursor = `<span class="blinking__cursor" ></span>`;
 
 	console.log("typetext", element, text);
+
 	let interval = setInterval(() => {
+		chatContainer.scrollTop = chatContainer.scrollHeight;
 		if (index < text.length) {
 			console.log("index<dan");
 			element.innerHTML += text.charAt(index);
-			console.log(text.charAt(index));
 
 			index++;
 		} else {
-			console.log("index>>dan");
 			clearInterval(interval);
 		}
 	}, 20);
