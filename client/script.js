@@ -1,9 +1,11 @@
-import bot from "./assets/bot.svg";
-import user from "./assets/user.svg";
+import bot from "./assets/robot.svg";
+import user from "./assets/person.svg";
+/* import bot from "./assets/bot.svg";
+import user from "./assets/user.svg"; */
 
 const form = document.getElementById("form");
 const chatContainer = document.getElementById("chat_container");
-
+let loading = false;
 // load interval
 let loadInterval;
 
@@ -39,6 +41,7 @@ const typeText = (element, text) => {
 
 			index++;
 		} else {
+			loading = false;
 			clearInterval(interval);
 		}
 	}, 20);
@@ -69,6 +72,15 @@ const chatStripe = (isAi, value, uniqueId) => {
 
 const handleSubmit = async (e) => {
 	e.preventDefault();
+	const plContainer = document.getElementById("placeholder_container");
+	if (plContainer) {
+		console.log(plContainer);
+		plContainer.parentElement.removeChild(plContainer);
+	}
+	if (loading) {
+		return;
+	}
+	loading = true;
 
 	const data = new FormData(form);
 
@@ -99,6 +111,7 @@ const handleSubmit = async (e) => {
 		}),
 	});
 
+	loading = false;
 	clearInterval(loadInterval);
 	messageDiv.innerHTML = "";
 

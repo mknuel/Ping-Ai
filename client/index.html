@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href="./assets/robot.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
 		<title>Ping | Your AI helper </title>
@@ -10,6 +10,11 @@
 
 	<body>
 		<div id="app">
+			<div id="placeholder_container"> 
+				<img src="./assets/robot.svg" alt="ping">	
+				<h1>Ask me anything!</h1>
+				<h6 for="">try in the chat box below</h6>
+			</div>
 			<div id="chat_container"> 
 
 				
@@ -24,7 +29,9 @@
 					placeholder="Ask Ping..."
 				></textarea>
 
-				<button type="submit"><img src="./assets/send.svg" alt="send"/></button>
+				<button type="submit"><img src="./assets/send.svg" alt="send"/>
+				
+				</button>
 			</form>
 		</div>
 		<script type="module" src="./script.js"></script>
